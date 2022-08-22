@@ -9,9 +9,13 @@ app.listen(port, () => {
 });
 
 // Handle Get Requests
-app.get('/api/pet', function(request, response){
-  response.send('Welcome to the pet page.')
+app.get('/api/pet', function(req, res){
+  res.send('Welcome to the pet page.')
 });
-app.get('/api/toy', function(request, response){
-  response.send('Welcome to the toy page.')
+app.get('/api/toy', function(req, res){
+  res.send('Welcome to the toy page.')
+});
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname +'/index.html')
 });
