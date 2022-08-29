@@ -10,14 +10,12 @@ app.listen(port, () => {
   console.log(`Success! Your application is running on port ${port}.`);
 });
 
-// Codes for reference
-// app.get('/api/pet', (req, res) => {
-//   res.send('Welcome to the pet page.')
-//   res.sendFile(__dirname +'/index.html')
-//   res.json({message: "Error"})
-// });
 
 app.get("/", (req, res) => {
   console.log('Welcome')
-  res.render("index", {message1:"hello world!"})  // rendering an object
+  res.render("index")
 })
+
+const userRouter = require('./routes//users') // import the file we created from users.js
+
+app.use('/users', userRouter) //
