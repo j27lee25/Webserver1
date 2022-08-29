@@ -4,18 +4,20 @@ const express = require('express');
 const app = express();
 const port = 4000;
 
+app.set('view engine', 'ejs')
+
 app.listen(port, () => {
   console.log(`Success! Your application is running on port ${port}.`);
 });
 
-// Handle Get Requests
-app.get('/api/pet', function(req, res){
-  res.send('Welcome to the pet page.')
-});
-app.get('/api/toy', function(req, res){
-  res.send('Welcome to the toy page.')
-});
+// Codes for reference
+// app.get('/api/pet', (req, res) => {
+//   res.send('Welcome to the pet page.')
+//   res.sendFile(__dirname +'/index.html')
+//   res.json({message: "Error"})
+// });
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname +'/index.html')
-});
+app.get("/", (req, res) => {
+  console.log('Welcome')
+  res.render("index", {message1:"hello world!"})  // rendering an object
+})
