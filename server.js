@@ -18,4 +18,4 @@ app.get("/", (req, res) => {
 
 const userRouter = require('./routes//users') // import the file we created from users.js
 
-app.use('/users', userRouter) //
+app.use('/users', userRouter) //to link up we created on users.js into the main app, we need to call app.use()
